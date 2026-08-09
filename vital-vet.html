@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vital Vet | ExpoTÉCNICA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+:root{
+
+--verde:#2E8B57;
+--azul:#0077B6;
+--oscuro:#0F172A;
+--gris:#64748B;
+--fondo:#F8FAFC;
+--blanco:#ffffff;
+--rojo:#DC2626;
+--amarillo:#D97706;
+--borde:#E2E8F0;
+--sidebar:#0A1628;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:var(--fondo);
+color:var(--oscuro);
+
+}
+
+img{
+
+max-width:100%;
+
+}
+
+h2{
+
+font-size:2.3rem;
+margin-bottom:20px;
+
+}
+
+p{
+
+line-height:1.8;
+color:var(--gris);
+
+}
+
+.btn{
+
+display:inline-block;
+padding:15px 35px;
+background:var(--verde);
+color:white;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.35s;
+border:none;
+cursor:pointer;
+font-size:1rem;
+font-family:'Poppins',sans-serif;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+box-shadow:0 15px 30px rgba(46,139,87,.25);
+
+}
+
+.btn-outline{
+
+background:transparent;
+color:var(--verde);
+border:2px solid var(--verde);
+padding:13px 33px;
+
+}
+
+.btn-outline:hover{
+
+box-shadow:0 15px 30px rgba(46,139,87,.15);
+
+}
+
+.btn-azul{
+
+background:var(--azul);
+
+}
+
+.btn-azul:hover{
+
+box-shadow:0 15px 30px rgba(0,119,182,.25);
+
+}
+
+.btn-sm{
+
+padding:9px 20px;
+font-size:.85rem;
+border-radius:30px;
+
+}
+
+.btn-link{
+
+background:none;
+border:none;
+color:var(--gris);
+font-weight:600;
+cursor:pointer;
+font-size:.9rem;
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:0;
+font-family:'Poppins',sans-serif;
+
+}
+
+.btn-link:hover{
+
+color:var(--verde);
+
+}
+
+/* ===================== VISTAS (pantallas completas) ===================== */
+
+.view{
+
+display:none;
+opacity:0;
+transform:translateY(18px);
+transition:opacity .45s ease, transform .45s ease;
+
+}
+
+.view.active{
+
+display:block;
+
+}
+
+.view.view-show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+.tab-panel{
+
+transition:opacity .3s ease, transform .3s ease;
+
+}
+
+.tab-panel.tab-hide{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+/* ===================== VISTA: LANDING ===================== */
+
+section{
+
+padding:90px 10%;
+
+}
+
+header{
+
+position:fixed;
+width:100%;
+top:0;
+left:0;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(12px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 10%;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+}
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:12px;
+font-size:1.5rem;
+font-weight:700;
+color:var(--verde);
+
+}
+
+.logo i{
+
+font-size:2rem;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:35px;
+align-items:center;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:var(--verde);
+
+}
+
+.nav-cuenta{
+
+background:var(--verde);
+color:white !important;
+padding:10px 22px;
+border-radius:50px;
+font-weight:600 !important;
+border:none;
+cursor:pointer;
+font-size:1rem;
+font-family:'Poppins',sans-serif;
+
+}
+
+.nav-cuenta:hover{
+
+color:white !important;
+opacity:.9;
+
+}
+
+.hero{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+min-height:100vh;
+gap:60px;
+
+}
+
+.hero h1{
+
+font-size:4rem;
+margin-bottom:15px;
+
+}
+
+.hero span{
+
+color:var(--verde);
+
+}
+
+.hero h3{
+
+color:var(--azul);
+font-size:1.4rem;
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+margin-bottom:35px;
+
+}
+
+.hero-image{
+
+display:flex;
+justify-content:center;
+
+}
+
+.hero-image img{
+
+width:90%;
+filter:drop-shadow(0 30px 35px rgba(0,0,0,.15));
+
+}
+
+.card{
+
+background:white;
+border-radius:25px;
+padding:35px;
+box-shadow:0 15px 35px rgba(0,0,0,.06);
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.about{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+
+}
+
+.about img{
+
+border-radius:25px;
+
+}
+
+.steps{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:50px;
+
+}
+
+.step{
+
+position:relative;
+text-align:center;
+
+}
+
+.step i{
+
+font-size:45px;
+color:var(--verde);
+margin-bottom:20px;
+
+}
+
+.arrow{
+
+position:absolute;
+right:-30px;
+top:45%;
+font-size:28px;
+color:var(--azul);
+
+}
+
+.step:last-child .arrow{
+
+display:none;
+
+}
+
+.benefits{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-top:45px;
+
+}
+
+.benefit{
+
+text-align:center;
+
+}
+
+.benefit i{
+
+font-size:45px;
+color:var(--azul);
+margin-bottom:20px;
+
+}
+
+.team{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:40px;
+
+}
+
+.member{
+
+text-align:center;
+
+}
+
+.member i{
+
+font-size:65px;
+color:var(--verde);
+margin-bottom:20px;
+
+}
+
+footer{
+
+background:#0A2540;
+color:white;
+padding:35px;
+text-align:center;
+
+}
+
+.hidden{
+
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/* ===================== VISTA: AUTENTICACIÓN ===================== */
+
+.auth-screen{
+
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:var(--fondo);
+padding:40px 20px;
+position:relative;
+
+}
+
+.auth-back{
+
+position:absolute;
+top:30px;
+left:30px;
+
+}
+
+.auth-wrap{
+
+max-width:440px;
+width:100%;
+
+}
+
+.auth-logo{
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+font-size:1.5rem;
+font-weight:700;
+color:var(--verde);
+margin-bottom:30px;
+
+}
+
+.auth-logo i{
+
+font-size:2rem;
+
+}
+
+.auth-tabs{
+
+display:flex;
+background:var(--fondo);
+border-radius:50px;
+padding:6px;
+margin-bottom:30px;
+
+}
+
+.auth-tab{
+
+flex:1;
+text-align:center;
+padding:12px;
+border-radius:50px;
+cursor:pointer;
+font-weight:600;
+color:var(--gris);
+transition:.3s;
+user-select:none;
+
+}
+
+.auth-tab.active{
+
+background:var(--verde);
+color:white;
+
+}
+
+.form-group{
+
+margin-bottom:18px;
+
+}
+
+.form-group label{
+
+display:block;
+font-size:.85rem;
+font-weight:600;
+margin-bottom:7px;
+color:var(--oscuro);
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+width:100%;
+padding:13px 16px;
+border:2px solid var(--borde);
+border-radius:12px;
+font-size:.95rem;
+font-family:'Poppins',sans-serif;
+color:var(--oscuro);
+background:var(--fondo);
+transition:.25s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+outline:none;
+border-color:var(--verde);
+background:white;
+
+}
+
+.form-group textarea{
+
+resize:vertical;
+min-height:90px;
+
+}
+
+.form-row{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+
+}
+
+.auth-error{
+
+background:#FEF2F2;
+color:var(--rojo);
+padding:12px 16px;
+border-radius:10px;
+font-size:.85rem;
+margin-bottom:16px;
+display:none;
+
+}
+
+.auth-error.show{
+
+display:block;
+
+}
+
+/* ===================== VISTA: APP (SIDEBAR) ===================== */
+
+.app-screen{
+
+display:flex;
+min-height:100vh;
+align-items:stretch;
+
+}
+
+.app-sidebar{
+
+width:250px;
+flex-shrink:0;
+background:var(--sidebar);
+color:white;
+padding:28px 18px;
+display:flex;
+flex-direction:column;
+gap:4px;
+position:sticky;
+top:0;
+height:100vh;
+overflow-y:auto;
+
+}
+
+.app-sidebar .logo{
+
+color:white;
+margin-bottom:10px;
+padding:0 10px;
+
+}
+
+.app-user{
+
+display:flex;
+align-items:center;
+gap:12px;
+padding:14px 10px;
+margin-bottom:20px;
+border-bottom:1px solid rgba(255,255,255,.1);
+padding-bottom:22px;
+
+}
+
+.app-avatar{
+
+width:42px;
+height:42px;
+border-radius:50%;
+background:var(--verde);
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+flex-shrink:0;
+
+}
+
+.app-user strong{
+
+display:block;
+font-size:.9rem;
+
+}
+
+.app-user span{
+
+font-size:.75rem;
+color:#94A3B8;
+
+}
+
+.app-nav-item{
+
+padding:13px 14px;
+border-radius:12px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:12px;
+color:#CBD5E1;
+font-weight:500;
+font-size:.92rem;
+transition:.25s;
+
+}
+
+.app-nav-item i{
+
+width:18px;
+text-align:center;
+
+}
+
+.app-nav-item:hover{
+
+background:rgba(255,255,255,.06);
+color:white;
+
+}
+
+.app-nav-item.active{
+
+background:var(--verde);
+color:white;
+
+}
+
+.app-nav-divider{
+
+height:1px;
+background:rgba(255,255,255,.1);
+margin:16px 6px;
+
+}
+
+.app-nav-item.muted{
+
+color:#64748B;
+margin-top:auto;
+
+}
+
+.app-nav-item.muted:hover{
+
+color:#CBD5E1;
+
+}
+
+.app-main{
+
+flex:1;
+padding:45px 55px;
+min-width:0;
+
+}
+
+.app-main-head{
+
+margin-bottom:32px;
+
+}
+
+.app-main-head h2{
+
+font-size:1.7rem;
+margin-bottom:6px;
+
+}
+
+.app-main-head p{
+
+margin:0;
+
+}
+
+.tab-panel{
+
+display:none;
+
+}
+
+.tab-panel.active{
+
+display:block;
+
+}
+
+.pet-list{
+
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:18px;
+margin-top:20px;
+
+}
+
+.pet-card{
+
+background:white;
+border-radius:16px;
+padding:20px;
+border:1px solid var(--borde);
+
+}
+
+.pet-card i{
+
+font-size:28px;
+color:var(--verde);
+margin-bottom:10px;
+display:block;
+
+}
+
+.pet-card h4{
+
+margin-bottom:4px;
+
+}
+
+.pet-card p{
+
+font-size:.85rem;
+margin:0;
+
+}
+
+.empty-state{
+
+text-align:center;
+padding:40px 20px;
+color:var(--gris);
+background:white;
+border-radius:16px;
+border:1px dashed var(--borde);
+
+}
+
+.empty-state i{
+
+font-size:38px;
+margin-bottom:12px;
+display:block;
+opacity:.5;
+
+}
+
+.prio-group{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+
+}
+
+.prio-option{
+
+border:2px solid var(--borde);
+border-radius:12px;
+padding:14px 10px;
+text-align:center;
+cursor:pointer;
+font-weight:600;
+font-size:.85rem;
+transition:.25s;
+color:var(--gris);
+background:white;
+
+}
+
+.prio-option i{
+
+display:block;
+margin-bottom:6px;
+font-size:1.1rem;
+
+}
+
+.prio-option[data-p="urgente"].active{ border-color:var(--rojo); background:#FEF2F2; color:var(--rojo); }
+.prio-option[data-p="moderado"].active{ border-color:var(--amarillo); background:#FFFBEB; color:var(--amarillo); }
+.prio-option[data-p="consulta"].active{ border-color:var(--verde); background:#F0FDF4; color:var(--verde); }
+
+.req-card{
+
+background:white;
+border:1px solid var(--borde);
+border-radius:16px;
+padding:18px 22px;
+margin-bottom:12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:16px;
+flex-wrap:wrap;
+
+}
+
+.req-info h4{
+
+font-size:1rem;
+margin-bottom:4px;
+
+}
+
+.req-info p{
+
+font-size:.82rem;
+margin:0;
+
+}
+
+.req-meta{
+
+display:flex;
+align-items:center;
+gap:12px;
+flex-wrap:wrap;
+
+}
+
+.badge{
+
+padding:6px 14px;
+border-radius:50px;
+font-size:.75rem;
+font-weight:700;
+white-space:nowrap;
+
+}
+
+.badge-urgente{ background:#FEF2F2; color:var(--rojo); }
+.badge-moderado{ background:#FFFBEB; color:var(--amarillo); }
+.badge-consulta{ background:#F0FDF4; color:var(--verde); }
+
+.nav-notif{
+
+background:var(--rojo);
+color:#fff;
+font-size:.7rem;
+font-weight:700;
+padding:2px 7px;
+border-radius:20px;
+margin-left:auto;
+
+}
+
+.status{
+
+padding:6px 14px;
+border-radius:50px;
+font-size:.75rem;
+font-weight:700;
+white-space:nowrap;
+
+}
+
+.status-pendiente{ background:#F1F5F9; color:var(--gris); }
+.status-atencion{ background:#EFF6FF; color:var(--azul); }
+.status-finalizada{ background:#F0FDF4; color:var(--verde); }
+
+.form-card{
+
+background:white;
+border-radius:16px;
+padding:30px;
+border:1px solid var(--borde);
+max-width:640px;
+
+}
+
+#toast-box{
+
+position:fixed;
+bottom:25px;
+right:25px;
+z-index:3000;
+display:flex;
+flex-direction:column;
+gap:10px;
+
+}
+
+.toast{
+
+background:var(--oscuro);
+color:white;
+padding:15px 22px;
+border-radius:12px;
+font-size:.88rem;
+font-weight:500;
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+display:flex;
+align-items:center;
+gap:10px;
+animation:toastIn .35s ease;
+max-width:320px;
+
+}
+
+.toast i{ color:var(--verde); }
+.toast.err i{ color:var(--rojo); }
+
+@keyframes toastIn{
+from{ opacity:0; transform:translateY(15px); }
+to{ opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:1000px){
+
+.hero,
+.about{
+
+grid-template-columns:1fr;
+
+}
+
+.steps{
+
+grid-template-columns:1fr;
+
+}
+
+.arrow{
+
+display:none;
+
+}
+
+.benefits{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.team{
+
+grid-template-columns:1fr;
+
+}
+
+nav ul{
+
+gap:18px;
+
+}
+
+.form-row,
+.prio-group{
+
+grid-template-columns:1fr;
+
+}
+
+.app-screen{
+
+flex-direction:column;
+
+}
+
+.app-sidebar{
+
+width:100%;
+height:auto;
+position:relative;
+flex-direction:row;
+flex-wrap:wrap;
+align-items:center;
+
+}
+
+.app-user{
+
+border:none;
+margin:0;
+padding:6px 10px;
+
+}
+
+.app-nav-divider{
+
+display:none;
+
+}
+
+.app-nav-item.muted{
+
+margin-top:0;
+
+}
+
+.app-main{
+
+padding:35px 25px;
+
+}
+
+}
+
+@media(max-width:700px){
+
+header{
+
+flex-direction:column;
+gap:15px;
+
+}
+
+.hero{
+
+padding-top:120px;
+
+}
+
+.hero h1{
+
+font-size:2.8rem;
+
+}
+
+.benefits{
+
+grid-template-columns:1fr;
+
+}
+
+section{
+
+padding:80px 7%;
+
+}
+
+.req-card{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===================== VISTA 1: LANDING ===================== -->
+
+<div class="view active" id="viewLanding">
+
+<header>
+
+<div class="logo">
+<i class="fas fa-paw"></i>
+Vital Vet
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="#inicio">Inicio</a></li>
+
+<li><a href="#proyecto">Sobre el proyecto</a></li>
+
+<li><a href="#funciona">¿Cómo funciona?</a></li>
+
+<li><a href="#beneficios">Beneficios</a></li>
+
+<li><a href="#equipo">Equipo</a></li>
+
+<li><button class="nav-cuenta" id="navCuentaBtn" onclick="irACuenta()">Mi cuenta</button></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero" id="inicio">
+
+<div>
+
+<h1>Vital <span>Vet</span></h1>
+
+<h3>Tecnología al servicio del bienestar animal</h3>
+
+<p>
+
+Muchas emergencias ocurren cuando las clínicas veterinarias están cerradas o cuando transportar una mascota resulta complicado. Vital Vet nace para ofrecer una plataforma de atención veterinaria móvil sencilla, rápida y accesible.
+
+</p>
+
+<button class="btn" onclick="irACuenta()">Solicitar atención</button>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=900" alt="Mascotas">
+
+</div>
+
+</section>
+
+<section id="proyecto">
+
+<h2>Sobre el proyecto</h2>
+
+<div class="about">
+
+<img class="card hidden"
+src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=900">
+
+<div class="card hidden">
+
+<h3>El problema</h3>
+
+<p>
+
+Muchas mascotas requieren atención inmediata cuando las clínicas veterinarias se encuentran cerradas o alejadas del lugar donde ocurre la emergencia.
+
+</p>
+
+<br>
+
+<h3>La solución</h3>
+
+<p>
+
+Vital Vet propone una plataforma moderna que permite solicitar atención veterinaria de forma rápida, conectando propietarios con profesionales para ofrecer asistencia eficiente y accesible.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="funciona">
+
+<h2>¿Cómo funciona?</h2>
+
+<div class="steps">
+
+<div class="card step hidden">
+
+<i class="fas fa-mobile-screen-button"></i>
+
+<h3>Solicitud</h3>
+
+<p>El usuario solicita ayuda desde la plataforma.</p>
+
+<div class="arrow">
+<i class="fas fa-arrow-right"></i>
+</div>
+
+</div>
+
+<div class="card step hidden">
+
+<i class="fas fa-bell"></i>
+
+<h3>Recepción</h3>
+
+<p>El veterinario recibe la solicitud inmediatamente.</p>
+
+<div class="arrow">
+<i class="fas fa-arrow-right"></i>
+</div>
+
+</div>
+
+<div class="card step hidden">
+
+<i class="fas fa-user-doctor"></i>
+
+<h3>Atención</h3>
+
+<p>El profesional brinda la asistencia veterinaria.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="beneficios">
+
+<h2>Beneficios</h2>
+
+<div class="benefits">
+
+<div class="card benefit hidden">
+
+<i class="fas fa-bolt"></i>
+
+<h3>Atención rápida</h3>
+
+</div>
+
+<div class="card benefit hidden">
+
+<i class="fas fa-hand-pointer"></i>
+
+<h3>Fácil de usar</h3>
+
+</div>
+
+<div class="card benefit hidden">
+
+<i class="fas fa-globe"></i>
+
+<h3>Mayor accesibilidad</h3>
+
+</div>
+
+<div class="card benefit hidden">
+
+<i class="fas fa-heart"></i>
+
+<h3>Bienestar animal</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="equipo">
+
+<h2>Equipo</h2>
+
+<div class="team">
+
+<div class="card member hidden">
+
+<i class="fas fa-user-circle"></i>
+
+<h3>Leann Umaña</h3>
+
+</div>
+
+<div class="card member hidden">
+
+<i class="fas fa-user-circle"></i>
+
+<h3>Danny Francisco</h3>
+
+</div>
+
+<div class="card member hidden">
+
+<i class="fas fa-user-circle"></i>
+
+<h3>Juliam Oviedo</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+Vital Vet - Proyecto ExpoTÉCNICA
+
+</footer>
+
+</div>
+
+<!-- ===================== VISTA 2: AUTENTICACIÓN ===================== -->
+
+<div class="view" id="viewAuth">
+
+<div class="auth-screen">
+
+<button class="btn-link auth-back" onclick="mostrarVista('landing')">
+<i class="fas fa-arrow-left"></i> Volver al inicio
+</button>
+
+<div class="auth-wrap">
+
+<div class="auth-logo">
+<i class="fas fa-paw"></i> Vital Vet
+</div>
+
+<div class="card">
+
+<div class="auth-tabs">
+
+<div class="auth-tab active" data-tab="login" onclick="cambiarAuthTab('login')">Iniciar sesión</div>
+
+<div class="auth-tab" data-tab="registro" onclick="cambiarAuthTab('registro')">Crear cuenta</div>
+
+</div>
+
+<div class="auth-error" id="authError"></div>
+
+<form id="formLogin" onsubmit="return manejarLogin(event)">
+
+<div class="form-group">
+
+<label>Correo electrónico</label>
+
+<input type="email" id="loginEmail" required placeholder="tucorreo@ejemplo.com">
+
+</div>
+
+<div class="form-group">
+
+<label>Contraseña</label>
+
+<input type="password" id="loginPassword" required placeholder="••••••••">
+
+</div>
+
+<button type="submit" class="btn" style="width:100%">Iniciar sesión</button>
+
+</form>
+
+<form id="formRegistro" onsubmit="return manejarRegistro(event)" style="display:none">
+
+<div class="form-group">
+
+<label>Nombre completo</label>
+
+<input type="text" id="regNombre" required placeholder="Tu nombre">
+
+</div>
+
+<div class="form-group">
+
+<label>Correo electrónico</label>
+
+<input type="email" id="regEmail" required placeholder="tucorreo@ejemplo.com">
+
+</div>
+
+<div class="form-group">
+
+<label>Contraseña</label>
+
+<input type="password" id="regPassword" required placeholder="Mínimo 4 caracteres" minlength="4">
+
+</div>
+
+<button type="submit" class="btn" style="width:100%">Crear cuenta</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================== VISTA 3: APP (SIDEBAR) ===================== -->
+
+<div class="view" id="viewApp">
+
+<div class="app-screen">
+
+<div class="app-sidebar">
+
+<div class="logo">
+<i class="fas fa-paw"></i> Vital Vet
+</div>
+
+<div class="app-user">
+
+<div class="app-avatar" id="dashAvatar">?</div>
+
+<div>
+
+<strong id="dashNombre">-</strong>
+
+<span id="dashEmail">-</span>
+
+</div>
+
+</div>
+
+<div class="app-nav-item active" data-tab="perfil" onclick="cambiarDashTab('perfil')">
+<i class="fas fa-paw"></i> Mis mascotas
+</div>
+
+<div class="app-nav-item" data-tab="solicitud" onclick="cambiarDashTab('solicitud')">
+<i class="fas fa-triangle-exclamation"></i> Nueva solicitud
+</div>
+
+<div class="app-nav-item" data-tab="historial" onclick="cambiarDashTab('historial')">
+<i class="fas fa-clock-rotate-left"></i> Mi historial
+</div>
+
+<div class="app-nav-item" data-tab="veterinario" id="navVeterinario" onclick="cambiarDashTab('veterinario')">
+<i class="fas fa-user-doctor"></i> Panel veterinario
+<span class="nav-notif" id="notifVeterinario" style="display:none">0</span>
+</div>
+
+<div class="app-nav-divider"></div>
+
+<div class="app-nav-item muted" onclick="mostrarVista('landing')">
+<i class="fas fa-circle-info"></i> Sobre nosotros
+</div>
+
+<div class="app-nav-item muted" onclick="cerrarSesion()">
+<i class="fas fa-right-from-bracket"></i> Cerrar sesión
+</div>
+
+</div>
+
+<div class="app-main">
+
+<div class="tab-panel active" id="panel-perfil">
+
+<div class="app-main-head">
+<h2>Mis mascotas</h2>
+<p>Registra a tus mascotas para poder solicitar atención por ellas.</p>
+</div>
+
+<form id="formMascota" onsubmit="return agregarMascota(event)" class="form-card">
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>Nombre de la mascota</label>
+
+<input type="text" id="petNombre" required placeholder="Ej: Max">
+
+</div>
+
+<div class="form-group">
+
+<label>Especie</label>
+
+<select id="petEspecie" required>
+
+<option value="">Selecciona...</option>
+
+<option value="Perro">Perro</option>
+
+<option value="Gato">Gato</option>
+
+<option value="Ave">Ave</option>
+
+<option value="Conejo">Conejo</option>
+
+<option value="Otro">Otro</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Edad (años)</label>
+
+<input type="number" id="petEdad" min="0" max="40" required placeholder="Ej: 3">
+
+</div>
+
+<button type="submit" class="btn btn-azul">
+<i class="fas fa-plus"></i> Agregar mascota
+</button>
+
+</form>
+
+<h3 style="margin:30px 0 5px">Mis mascotas registradas</h3>
+
+<div class="pet-list" id="listaMascotas"></div>
+
+</div>
+
+<div class="tab-panel" id="panel-solicitud">
+
+<div class="app-main-head">
+<h2>Nueva solicitud</h2>
+<p>Cuéntanos qué necesita tu mascota y un veterinario la atenderá.</p>
+</div>
+
+<form id="formSolicitud" onsubmit="return crearSolicitud(event)" class="form-card">
+
+<div class="form-group">
+
+<label>Mascota</label>
+
+<select id="solMascota" required>
+
+<option value="">Selecciona una mascota</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Nivel de prioridad</label>
+
+<div class="prio-group">
+
+<div class="prio-option" data-p="urgente" onclick="seleccionarPrioridad('urgente')">
+<i class="fas fa-bolt"></i> Urgente
+</div>
+
+<div class="prio-option" data-p="moderado" onclick="seleccionarPrioridad('moderado')">
+<i class="fas fa-triangle-exclamation"></i> Moderado
+</div>
+
+<div class="prio-option" data-p="consulta" onclick="seleccionarPrioridad('consulta')">
+<i class="fas fa-comment-medical"></i> Consulta
+</div>
+
+</div>
+
+<input type="hidden" id="solPrioridad" required>
+
+</div>
+
+<div class="form-group">
+
+<label>Describe la situación</label>
+
+<textarea id="solDescripcion" required placeholder="Ej: Mi perro está vomitando desde hace 2 horas..."></textarea>
+
+</div>
+
+<button type="submit" class="btn">
+<i class="fas fa-paper-plane"></i> Enviar solicitud
+</button>
+
+</form>
+
+</div>
+
+<div class="tab-panel" id="panel-historial">
+
+<div class="app-main-head">
+<h2>Mi historial</h2>
+<p>Estado de todas las solicitudes que has hecho.</p>
+</div>
+
+<div id="listaHistorial"></div>
+
+</div>
+
+<div class="tab-panel" id="panel-veterinario">
+
+<div class="app-main-head">
+<h2>Panel veterinario</h2>
+<p>Vista de demostración: aquí un veterinario vería y atendería las solicitudes de todos los usuarios de la plataforma.</p>
+</div>
+
+<div id="listaVeterinario"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="toast-box"></div>
+
+<script>
+
+const hiddenEls=document.querySelectorAll('.hidden');
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+});
+
+hiddenEls.forEach(el=>observer.observe(el));
+
+function mostrarVista(nombre){
+
+const actual=document.querySelector('.view.active');
+const idDestino=nombre==='landing'?'viewLanding':(nombre==='auth'?'viewAuth':'viewApp');
+
+if(actual && actual.id===idDestino){
+actual.classList.add('view-show');
+window.scrollTo(0,0);
+return;
+}
+
+const activar=()=>{
+
+document.querySelectorAll('.view').forEach(v=>{
+v.classList.remove('active');
+v.classList.remove('view-show');
+});
+
+let destino=null;
+if(nombre==='landing') destino=document.getElementById('viewLanding');
+if(nombre==='auth') destino=document.getElementById('viewAuth');
+if(nombre==='app') destino=document.getElementById('viewApp');
+
+if(!destino) return;
+
+destino.classList.add('active');
+window.scrollTo(0,0);
+
+requestAnimationFrame(()=>{
+requestAnimationFrame(()=>destino.classList.add('view-show'));
+});
+
+};
+
+if(actual && actual.classList.contains('view-show')){
+
+actual.classList.remove('view-show');
+setTimeout(activar,220);
+
+}else{
+
+activar();
+
+}
+
+}
+
+function irACuenta(){
+
+if(usuarioActual()){
+
+renderizarApp();
+mostrarVista('app');
+
+}else{
+
+mostrarVista('auth');
+
+}
+
+}
+
+const DB_USERS='vitalvet_usuarios';
+const DB_SESSION='vitalvet_sesion';
+const DB_PETS='vitalvet_mascotas';
+const DB_REQUESTS='vitalvet_solicitudes';
+
+function leer(clave){
+try{
+return JSON.parse(localStorage.getItem(clave)) || [];
+}catch(e){
+return [];
+}
+}
+
+function guardar(clave,valor){
+localStorage.setItem(clave,JSON.stringify(valor));
+}
+
+function generarId(){
+return Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+}
+
+function usuarioActual(){
+const sesion=JSON.parse(localStorage.getItem(DB_SESSION)||'null');
+if(!sesion) return null;
+return leer(DB_USERS).find(u=>u.id===sesion.userId)||null;
+}
+
+function mostrarToast(mensaje,tipo='ok'){
+const box=document.getElementById('toast-box');
+const toast=document.createElement('div');
+toast.className='toast'+(tipo==='err'?' err':'');
+toast.innerHTML='<i class="fas fa-'+(tipo==='err'?'circle-exclamation':'circle-check')+'"></i><span>'+mensaje+'</span>';
+box.appendChild(toast);
+setTimeout(()=>{
+toast.style.opacity='0';
+toast.style.transform='translateY(15px)';
+setTimeout(()=>toast.remove(),300);
+},3200);
+}
+
+function cambiarAuthTab(tab){
+document.querySelectorAll('.auth-tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
+document.getElementById('formLogin').style.display=tab==='login'?'block':'none';
+document.getElementById('formRegistro').style.display=tab==='registro'?'block':'none';
+ocultarError();
+}
+
+function mostrarError(msg){
+const el=document.getElementById('authError');
+el.textContent=msg;
+el.classList.add('show');
+}
+
+function ocultarError(){
+document.getElementById('authError').classList.remove('show');
+}
+
+function manejarRegistro(e){
+e.preventDefault();
+ocultarError();
+
+const nombre=document.getElementById('regNombre').value.trim();
+const email=document.getElementById('regEmail').value.trim().toLowerCase();
+const password=document.getElementById('regPassword').value;
+
+const usuarios=leer(DB_USERS);
+
+if(usuarios.some(u=>u.email===email)){
+mostrarError('Ya existe una cuenta con ese correo. Inicia sesión.');
+return false;
+}
+
+const nuevo={id:generarId(),nombre,email,password,rol:'usuario'};
+usuarios.push(nuevo);
+guardar(DB_USERS,usuarios);
+
+iniciarSesion(nuevo.id);
+mostrarToast('Cuenta creada. ¡Bienvenido, '+nombre.split(' ')[0]+'!');
+
+return false;
+}
+
+function manejarLogin(e){
+e.preventDefault();
+ocultarError();
+
+const email=document.getElementById('loginEmail').value.trim().toLowerCase();
+const password=document.getElementById('loginPassword').value;
+
+const usuario=leer(DB_USERS).find(u=>u.email===email && u.password===password);
+
+if(!usuario){
+mostrarError('Correo o contraseña incorrectos.');
+return false;
+}
+
+iniciarSesion(usuario.id);
+mostrarToast('¡Bienvenido de nuevo, '+usuario.nombre.split(' ')[0]+'!');
+
+return false;
+}
+
+function iniciarSesion(userId){
+localStorage.setItem(DB_SESSION,JSON.stringify({userId}));
+document.getElementById('formLogin').reset();
+document.getElementById('formRegistro').reset();
+renderizarApp();
+mostrarVista('app');
+}
+
+function cerrarSesion(){
+localStorage.removeItem(DB_SESSION);
+mostrarToast('Sesión cerrada.');
+mostrarVista('landing');
+actualizarNavCuenta();
+}
+
+function cambiarDashTab(tab){
+
+if(tab==='veterinario'){
+const usuario=usuarioActual();
+if(!usuario || usuario.rol!=='admin'){
+mostrarToast('Solo el administrador puede ver el panel veterinario.','err');
+return;
+}
+}
+
+document.querySelectorAll('.app-nav-item[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+
+const panelActual=document.querySelector('.tab-panel.active');
+const panelNuevo=document.getElementById('panel-'+tab);
+
+const activar=()=>{
+
+document.querySelectorAll('.tab-panel').forEach(p=>{
+p.classList.remove('active');
+p.classList.remove('tab-hide');
+});
+
+panelNuevo.classList.add('active');
+
+if(tab==='historial') renderizarHistorial();
+if(tab==='veterinario') renderizarVeterinario();
+if(tab==='solicitud') renderizarSelectMascotas();
+
+requestAnimationFrame(()=>{
+panelNuevo.classList.add('tab-hide');
+requestAnimationFrame(()=>panelNuevo.classList.remove('tab-hide'));
+});
+
+};
+
+if(panelActual && panelActual!==panelNuevo){
+panelActual.classList.add('tab-hide');
+setTimeout(activar,180);
+}else{
+activar();
+}
+
+}
+
+function agregarMascota(e){
+e.preventDefault();
+
+const usuario=usuarioActual();
+if(!usuario) return false;
+
+const nombre=document.getElementById('petNombre').value.trim();
+const especie=document.getElementById('petEspecie').value;
+const edad=document.getElementById('petEdad').value;
+
+const mascotas=leer(DB_PETS);
+
+mascotas.push({
+id:generarId(),
+userId:usuario.id,
+nombre,
+especie,
+edad
+});
+
+guardar(DB_PETS,mascotas);
+document.getElementById('formMascota').reset();
+mostrarToast(nombre+' fue agregado a tus mascotas.');
+renderizarMascotas();
+
+return false;
+}
+
+function misMascotas(){
+const usuario=usuarioActual();
+if(!usuario) return [];
+return leer(DB_PETS).filter(p=>p.userId===usuario.id);
+}
+
+const iconosEspecie={
+Perro:'fa-dog',
+Gato:'fa-cat',
+Ave:'fa-dove',
+Conejo:'fa-carrot',
+Otro:'fa-paw'
+};
+
+function renderizarMascotas(){
+const cont=document.getElementById('listaMascotas');
+const mascotas=misMascotas();
+
+if(mascotas.length===0){
+cont.innerHTML='<div class="empty-state"><i class="fas fa-paw"></i>Todavía no has registrado ninguna mascota.</div>';
+return;
+}
+
+cont.innerHTML=mascotas.map(m=>
+'<div class="pet-card">'+
+'<i class="fas '+(iconosEspecie[m.especie]||'fa-paw')+'"></i>'+
+'<h4>'+m.nombre+'</h4>'+
+'<p>'+m.especie+' · '+m.edad+' años</p>'+
+'</div>'
+).join('');
+}
+
+function seleccionarPrioridad(p){
+document.getElementById('solPrioridad').value=p;
+document.querySelectorAll('.prio-option').forEach(el=>el.classList.toggle('active',el.dataset.p===p));
+}
+
+function renderizarSelectMascotas(){
+const select=document.getElementById('solMascota');
+const mascotas=misMascotas();
+
+select.innerHTML='<option value="">Selecciona una mascota</option>'+
+mascotas.map(m=>'<option value="'+m.id+'">'+m.nombre+' ('+m.especie+')</option>').join('');
+
+if(mascotas.length===0){
+select.innerHTML='<option value="">Primero registra una mascota en "Mis mascotas"</option>';
+}
+}
+
+function crearSolicitud(e){
+e.preventDefault();
+
+const usuario=usuarioActual();
+if(!usuario) return false;
+
+const petId=document.getElementById('solMascota').value;
+const prioridad=document.getElementById('solPrioridad').value;
+const descripcion=document.getElementById('solDescripcion').value.trim();
+
+if(!petId){
+mostrarToast('Selecciona una mascota primero.','err');
+return false;
+}
+
+if(!prioridad){
+mostrarToast('Selecciona un nivel de prioridad.','err');
+return false;
+}
+
+const mascota=leer(DB_PETS).find(p=>p.id===petId);
+const solicitudes=leer(DB_REQUESTS);
+
+solicitudes.push({
+id:generarId(),
+userId:usuario.id,
+petId,
+petNombre:mascota?mascota.nombre:'-',
+prioridad,
+descripcion,
+estado:'pendiente',
+fecha:new Date().toISOString()
+});
+
+guardar(DB_REQUESTS,solicitudes);
+
+document.getElementById('formSolicitud').reset();
+document.querySelectorAll('.prio-option').forEach(el=>el.classList.remove('active'));
+
+mostrarToast('Solicitud enviada. Un veterinario la recibirá en breve.');
+cambiarDashTab('historial');
+
+return false;
+}
+
+const etiquetaPrioridad={urgente:'Urgente',moderado:'Moderado',consulta:'Consulta'};
+const etiquetaEstado={pendiente:'Pendiente',atencion:'En atención',finalizada:'Finalizada'};
+
+function formatearFecha(iso){
+const f=new Date(iso);
+return f.toLocaleDateString('es-CR',{day:'2-digit',month:'short'})+' · '+f.toLocaleTimeString('es-CR',{hour:'2-digit',minute:'2-digit'});
+}
+
+function renderizarHistorial(){
+const usuario=usuarioActual();
+const cont=document.getElementById('listaHistorial');
+if(!usuario) return;
+
+const propias=leer(DB_REQUESTS)
+.filter(s=>s.userId===usuario.id)
+.sort((a,b)=>new Date(b.fecha)-new Date(a.fecha));
+
+if(propias.length===0){
+cont.innerHTML='<div class="empty-state"><i class="fas fa-clock-rotate-left"></i>Aún no has hecho ninguna solicitud.</div>';
+return;
+}
+
+cont.innerHTML=propias.map(s=>
+'<div class="req-card">'+
+'<div class="req-info">'+
+'<h4>'+s.petNombre+'</h4>'+
+'<p>'+(s.descripcion||'Sin descripción')+'</p>'+
+'<p style="margin-top:6px;font-size:.75rem">'+formatearFecha(s.fecha)+'</p>'+
+'</div>'+
+'<div class="req-meta">'+
+'<span class="badge badge-'+s.prioridad+'">'+etiquetaPrioridad[s.prioridad]+'</span>'+
+'<span class="status status-'+s.estado+'">'+etiquetaEstado[s.estado]+'</span>'+
+'</div>'+
+'</div>'
+).join('');
+}
+
+function renderizarVeterinario(){
+const cont=document.getElementById('listaVeterinario');
+
+const orden={urgente:0,moderado:1,consulta:2};
+
+const todas=leer(DB_REQUESTS)
+.filter(s=>s.estado!=='finalizada')
+.sort((a,b)=>orden[a.prioridad]-orden[b.prioridad] || new Date(a.fecha)-new Date(b.fecha));
+
+if(todas.length===0){
+cont.innerHTML='<div class="empty-state"><i class="fas fa-clipboard-check"></i>No hay solicitudes activas en este momento.</div>';
+return;
+}
+
+const usuarios=leer(DB_USERS);
+
+cont.innerHTML=todas.map(s=>{
+const dueno=usuarios.find(u=>u.id===s.userId);
+let boton='';
+
+if(s.estado==='pendiente'){
+boton='<button class="btn btn-azul btn-sm" onclick="cambiarEstadoSolicitud(\''+s.id+'\',\'atencion\')"><i class="fas fa-bell"></i> Atender</button>';
+}else if(s.estado==='atencion'){
+boton='<button class="btn btn-sm" onclick="cambiarEstadoSolicitud(\''+s.id+'\',\'finalizada\')"><i class="fas fa-check"></i> Finalizar</button>';
+}
+
+return '<div class="req-card">'+
+'<div class="req-info">'+
+'<h4>'+s.petNombre+' — '+(dueno?dueno.nombre:'Usuario')+'</h4>'+
+'<p>'+(s.descripcion||'Sin descripción')+'</p>'+
+'<p style="margin-top:6px;font-size:.75rem">'+formatearFecha(s.fecha)+'</p>'+
+'</div>'+
+'<div class="req-meta">'+
+'<span class="badge badge-'+s.prioridad+'">'+etiquetaPrioridad[s.prioridad]+'</span>'+
+'<span class="status status-'+s.estado+'">'+etiquetaEstado[s.estado]+'</span>'+
+boton+
+'</div>'+
+'</div>';
+}).join('');
+}
+
+function cambiarEstadoSolicitud(id,nuevoEstado){
+const solicitudes=leer(DB_REQUESTS);
+const sol=solicitudes.find(s=>s.id===id);
+if(!sol) return;
+
+sol.estado=nuevoEstado;
+guardar(DB_REQUESTS,solicitudes);
+
+mostrarToast(nuevoEstado==='atencion'?'Solicitud marcada en atención.':'Solicitud finalizada.');
+renderizarVeterinario();
+actualizarNotificacionesAdmin();
+}
+
+function renderizarApp(){
+const usuario=usuarioActual();
+if(!usuario) return;
+
+document.getElementById('dashNombre').textContent=usuario.nombre;
+document.getElementById('dashEmail').textContent=usuario.email;
+document.getElementById('dashAvatar').textContent=usuario.nombre.charAt(0).toUpperCase();
+
+const esAdmin=usuario.rol==='admin';
+const navVet=document.getElementById('navVeterinario');
+navVet.style.display=esAdmin?'flex':'none';
+
+if(!esAdmin && document.getElementById('panel-veterinario').classList.contains('active')){
+cambiarDashTab('perfil');
+}
+
+renderizarMascotas();
+renderizarSelectMascotas();
+renderizarHistorial();
+
+if(esAdmin){
+renderizarVeterinario();
+}
+
+actualizarNotificacionesAdmin();
+actualizarNavCuenta();
+}
+
+function actualizarNotificacionesAdmin(){
+const usuario=usuarioActual();
+const badge=document.getElementById('notifVeterinario');
+
+if(!usuario || usuario.rol!=='admin'){
+badge.style.display='none';
+return;
+}
+
+const pendientes=leer(DB_REQUESTS).filter(s=>s.estado==='pendiente').length;
+
+if(pendientes>0){
+badge.textContent=pendientes;
+badge.style.display='inline-block';
+}else{
+badge.style.display='none';
+}
+}
+
+function actualizarNavCuenta(){
+const btn=document.getElementById('navCuentaBtn');
+if(!btn) return;
+btn.textContent=usuarioActual()?'Mi perfil':'Mi cuenta';
+}
+
+function crearUsuariosPorDefecto(){
+const usuarios=leer(DB_USERS);
+
+if(usuarios.length>0) return;
+
+guardar(DB_USERS,[
+{id:'admin',nombre:'admin',email:'admin@vitalvet.com',password:'admin123',rol:'admin'},
+{id:'test',nombre:'test',email:'test@vitalvet.com',password:'test123',rol:'usuario'}
+]);
+}
+
+function migrarUsuarios(){
+const usuarios=leer(DB_USERS);
+let cambio=false;
+
+usuarios.forEach(u=>{
+if(!u.rol){
+u.rol=(u.id==='admin' || u.email==='admin@vitalvet.com')?'admin':'usuario';
+cambio=true;
+}
+});
+
+if(cambio) guardar(DB_USERS,usuarios);
+}
+
+crearUsuariosPorDefecto();
+migrarUsuarios();
+actualizarNavCuenta();
+
+if(usuarioActual()){
+renderizarApp();
+mostrarVista('app');
+}else{
+mostrarVista('landing');
+}
+
+</script>
+
+</body>
+</html>
